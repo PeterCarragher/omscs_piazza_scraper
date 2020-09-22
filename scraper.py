@@ -6,7 +6,7 @@ from operator import add
 import time
 
 p = Piazza()
-p.user_login()
+p.user_login(email = 'pcarragher@gatech.edu', password = '84qC0pNmzsWJ')
 # if students did have capability to create secret student to student groups, I wouldnt see it. 
 # However piazza doesnt have that capability: you can only create posts for all students or just for the instructors eyes
 # This means it is unlikely that we would ever be able to manipulate the Piazza community into a student led one
