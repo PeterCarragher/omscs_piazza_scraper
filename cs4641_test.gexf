@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2020-10-25">
+    <creator>NetworkX 2.5</creator>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static" name="">
+    <attributes mode="static" class="node">
+      <attribute id="0" title="color" type="string" />
+      <attribute id="1" title="size" type="long" />
+      <attribute id="2" title="name" type="string" />
+    </attributes>
+    <nodes>
+      <node id="j6k76xjzxE3" label="j6k76xjzxE3">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="2" />
+          <attvalue for="2" value="Akanksha Jhunjhunwala" />
+        </attvalues>
+      </node>
+      <node id="j6w54xma1ts4y5" label="j6w54xma1ts4y5">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="2.1" />
+          <attvalue for="2" value="Ethan William Roland" />
+        </attvalues>
+      </node>
+      <node id="j6l6z6at4lg440" label="j6l6z6at4lg440">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="2" />
+          <attvalue for="2" value="Leo Ricci" />
+        </attvalues>
+      </node>
+      <node id="jzl8lsnbagf2j5" label="jzl8lsnbagf2j5">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="2.1" />
+          <attvalue for="2" value="Aidan Michael Albers" />
+        </attvalues>
+      </node>
+      <node id="jzjzuvbvots3s7" label="jzjzuvbvots3s7">
+        <attvalues>
+          <attvalue for="0" value="ta" />
+          <attvalue for="1" value="12.5" />
+          <attvalue for="2" value="Bo Zhao" />
+        </attvalues>
+      </node>
+      <node id="j6fwueamshr710" label="j6fwueamshr710">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="11" />
+          <attvalue for="2" value="Kushagr Singh" />
+        </attvalues>
+      </node>
+      <node id="jhgsxpx2g0s3kh" label="jhgsxpx2g0s3kh">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="14.1" />
+          <attvalue for="2" value="Imanuel Sonubi" />
+        </attvalues>
+      </node>
+      <node id="jzknvydzzjm157" label="jzknvydzzjm157">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="5.4" />
+          <attvalue for="2" value="Chunhao Zou" />
+        </attvalues>
+      </node>
+      <node id="j6e0pcipkmt52w" label="j6e0pcipkmt52w">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="11" />
+          <attvalue for="2" value="Crystal Li" />
+        </attvalues>
+      </node>
+      <node id="j6w53u2t2ms4g1" label="j6w53u2t2ms4g1">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="2" />
+          <attvalue for="2" value="Dan Mulloy" />
+        </attvalues>
+      </node>
+      <node id="kdjbxv0pu1i6bj" label="kdjbxv0pu1i6bj">
+        <attvalues>
+          <attvalue for="0" value="ta" />
+          <attvalue for="1" value="1.2000000000000002" />
+          <attvalue for="2" value="Vidisha Goyal" />
+        </attvalues>
+      </node>
+      <node id="is566am4hq7" label="is566am4hq7">
+        <attvalues>
+          <attvalue for="0" value="ta" />
+          <attvalue for="1" value="1.1" />
+          <attvalue for="2" value="Rafael Hanashiro" />
+        </attvalues>
+      </node>
+      <node id="j6hz8u12c7f4bi" label="j6hz8u12c7f4bi">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="2" />
+          <attvalue for="2" value="Jordan Hirsch" />
+        </attvalues>
+      </node>
+      <node id="j6m6gbqvBOu" label="j6m6gbqvBOu">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="1.1" />
+          <attvalue for="2" value="Jeremy Webb" />
+        </attvalues>
+      </node>
+      <node id="jzlnw1sm2t61b4" label="jzlnw1sm2t61b4">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="14.1" />
+          <attvalue for="2" value="Zhiyan Zhou" />
+        </attvalues>
+      </node>
+      <node id="jzl7m17rzsz43z" label="jzl7m17rzsz43z">
+        <attvalues>
+          <attvalue for="0" value="ta" />
+          <attvalue for="1" value="1.7000000000000006" />
+          <attvalue for="2" value="Gnanaguruparan Aishvaryaadevi" />
+        </attvalues>
+      </node>
+      <node id="jlpt3w07kmMV" label="jlpt3w07kmMV">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="13" />
+          <attvalue for="2" value="Harrison Feng Zhu" />
+        </attvalues>
+      </node>
+      <node id="jl1019x2zu85j0" label="jl1019x2zu85j0">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="2.4000000000000004" />
+          <attvalue for="2" value="Bryce Plunkett" />
+        </attvalues>
+      </node>
+      <node id="k55bfe7q7cj42w" label="k55bfe7q7cj42w">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="11" />
+          <attvalue for="2" value="Alexander Proschek" />
+        </attvalues>
+      </node>
+      <node id="jci0ywqpcnz3bv" label="jci0ywqpcnz3bv">
+        <attvalues>
+          <attvalue for="0" value="professor" />
+          <attvalue for="1" value="141.3" />
+          <attvalue for="2" value="Nimisha Roy" />
+        </attvalues>
+      </node>
+      <node id="jkzilprpdj4rb" label="jkzilprpdj4rb">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="1.1" />
+          <attvalue for="2" value="Darren Chiang" />
+        </attvalues>
+      </node>
+      <node id="jkxyddiot8d4aa" label="jkxyddiot8d4aa">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="11" />
+          <attvalue for="2" value="Priya Rajeev" />
+        </attvalues>
+      </node>
+      <node id="j6m9lau5nkx56b" label="j6m9lau5nkx56b">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="1.1" />
+          <attvalue for="2" value="Matthew Jonathon Bernet" />
+        </attvalues>
+      </node>
+      <node id="jl4fki7jWu9O" label="jl4fki7jWu9O">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="1.1" />
+          <attvalue for="2" value="Davi Nakajima An" />
+        </attvalues>
+      </node>
+      <node id="jl2ngltsjwMz" label="jl2ngltsjwMz">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="2" />
+          <attvalue for="2" value="Surya Shridhar Sundaram" />
+        </attvalues>
+      </node>
+      <node id="jqlgzyq720b1ty" label="jqlgzyq720b1ty">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="2" />
+          <attvalue for="2" value="Alexander George-Kennedy" />
+        </attvalues>
+      </node>
+      <node id="isbx4mtv8sn48l" label="isbx4mtv8sn48l">
+        <attvalues>
+          <attvalue for="0" value="professor" />
+          <attvalue for="1" value="83.1" />
+          <attvalue for="2" value="Rodrigo Borela" />
+        </attvalues>
+      </node>
+      <node id="ietxfhmoQ4x" label="ietxfhmoQ4x">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="12" />
+          <attvalue for="2" value="Michael Shealy" />
+        </attvalues>
+      </node>
+      <node id="jzoe10o8x56668" label="jzoe10o8x56668">
+        <attvalues>
+          <attvalue for="0" value="ta" />
+          <attvalue for="1" value="1.1" />
+          <attvalue for="2" value="Danrong Zhang" />
+        </attvalues>
+      </node>
+      <node id="jl43c52xwW1P" label="jl43c52xwW1P">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="2.2" />
+          <attvalue for="2" value="Trevor C Pope" />
+        </attvalues>
+      </node>
+      <node id="j6n2i4dctxq74f" label="j6n2i4dctxq74f">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="4.1" />
+          <attvalue for="2" value="Hieu Thu Nguyen" />
+        </attvalues>
+      </node>
+      <node id="jzie7rqjjbx1hp" label="jzie7rqjjbx1hp">
+        <attvalues>
+          <attvalue for="0" value="ta" />
+          <attvalue for="1" value="11" />
+          <attvalue for="2" value="Prithvi Alva Suresh" />
+        </attvalues>
+      </node>
+      <node id="gd6v7134AUa" label="gd6v7134AUa">
+        <attvalues>
+          <attvalue for="0" value="" />
+          <attvalue for="1" value="11" />
+          <attvalue for="2" value="Piazza Team" />
+        </attvalues>
+      </node>
+      <node id="jkxzcty3yzc4c7" label="jkxzcty3yzc4c7">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="2" />
+          <attvalue for="2" value="Zachary Minot" />
+        </attvalues>
+      </node>
+      <node id="jlbags5hhAln" label="jlbags5hhAln">
+        <attvalues>
+          <attvalue for="0" value="student" />
+          <attvalue for="1" value="2" />
+          <attvalue for="2" value="Joshua Daniel Shields" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="j6k76xjzxE3" target="jci0ywqpcnz3bv" id="0" weight="1" />
+      <edge source="j6k76xjzxE3" target="jzl7m17rzsz43z" id="1" weight="1" />
+      <edge source="j6w54xma1ts4y5" target="jci0ywqpcnz3bv" id="2" weight="1" />
+      <edge source="j6w54xma1ts4y5" target="j6w54xma1ts4y5" id="3" weight="1" />
+      <edge source="j6l6z6at4lg440" target="jci0ywqpcnz3bv" id="4" weight="1" />
+      <edge source="j6l6z6at4lg440" target="kdjbxv0pu1i6bj" id="5" weight="1" />
+      <edge source="jzl8lsnbagf2j5" target="jci0ywqpcnz3bv" id="6" weight="1" />
+      <edge source="jzl8lsnbagf2j5" target="jzl8lsnbagf2j5" id="7" weight="1" />
+      <edge source="jzl8lsnbagf2j5" target="jzjzuvbvots3s7" id="8" weight="3" />
+      <edge source="jzl8lsnbagf2j5" target="jkzilprpdj4rb" id="9" weight="1" />
+      <edge source="jzjzuvbvots3s7" target="jkxzcty3yzc4c7" id="10" weight="1" />
+      <edge source="jzjzuvbvots3s7" target="jzjzuvbvots3s7" id="11" weight="1" />
+      <edge source="jzjzuvbvots3s7" target="jhgsxpx2g0s3kh" id="12" weight="1" />
+      <edge source="jzjzuvbvots3s7" target="jl1019x2zu85j0" id="13" weight="4" />
+      <edge source="jzjzuvbvots3s7" target="j6m9lau5nkx56b" id="14" weight="1" />
+      <edge source="j6fwueamshr710" target="j6n2i4dctxq74f" id="15" weight="1" />
+      <edge source="jhgsxpx2g0s3kh" target="jci0ywqpcnz3bv" id="16" weight="1" />
+      <edge source="jhgsxpx2g0s3kh" target="jhgsxpx2g0s3kh" id="17" weight="2" />
+      <edge source="jhgsxpx2g0s3kh" target="isbx4mtv8sn48l" id="18" weight="1" />
+      <edge source="jhgsxpx2g0s3kh" target="kdjbxv0pu1i6bj" id="19" weight="1" />
+      <edge source="jzknvydzzjm157" target="jci0ywqpcnz3bv" id="20" weight="2" />
+      <edge source="jzknvydzzjm157" target="jzknvydzzjm157" id="21" weight="4" />
+      <edge source="jzknvydzzjm157" target="isbx4mtv8sn48l" id="22" weight="1" />
+      <edge source="jzknvydzzjm157" target="jl4fki7jWu9O" id="23" weight="1" />
+      <edge source="j6w53u2t2ms4g1" target="isbx4mtv8sn48l" id="24" weight="1" />
+      <edge source="is566am4hq7" target="jlbags5hhAln" id="25" weight="1" />
+      <edge source="j6hz8u12c7f4bi" target="jci0ywqpcnz3bv" id="26" weight="1" />
+      <edge source="j6hz8u12c7f4bi" target="jzoe10o8x56668" id="27" weight="1" />
+      <edge source="j6m6gbqvBOu" target="ietxfhmoQ4x" id="28" weight="1" />
+      <edge source="jzlnw1sm2t61b4" target="jzl7m17rzsz43z" id="29" weight="2" />
+      <edge source="jzlnw1sm2t61b4" target="jci0ywqpcnz3bv" id="30" weight="3" />
+      <edge source="jzlnw1sm2t61b4" target="jzlnw1sm2t61b4" id="31" weight="1" />
+      <edge source="jzlnw1sm2t61b4" target="jl43c52xwW1P" id="32" weight="1" />
+      <edge source="jzl7m17rzsz43z" target="jl43c52xwW1P" id="33" weight="1" />
+      <edge source="jzl7m17rzsz43z" target="ietxfhmoQ4x" id="34" weight="1" />
+      <edge source="jzl7m17rzsz43z" target="jlpt3w07kmMV" id="35" weight="1" />
+      <edge source="jzl7m17rzsz43z" target="jl2ngltsjwMz" id="36" weight="1" />
+      <edge source="jlpt3w07kmMV" target="jci0ywqpcnz3bv" id="37" weight="2" />
+      <edge source="jl1019x2zu85j0" target="jl1019x2zu85j0" id="38" weight="1" />
+      <edge source="jci0ywqpcnz3bv" target="j6n2i4dctxq74f" id="39" weight="2" />
+      <edge source="jci0ywqpcnz3bv" target="jkxzcty3yzc4c7" id="40" weight="1" />
+      <edge source="jci0ywqpcnz3bv" target="jl43c52xwW1P" id="41" weight="1" />
+      <edge source="jci0ywqpcnz3bv" target="jlbags5hhAln" id="42" weight="1" />
+      <edge source="jci0ywqpcnz3bv" target="ietxfhmoQ4x" id="43" weight="1" />
+      <edge source="jci0ywqpcnz3bv" target="jl2ngltsjwMz" id="44" weight="1" />
+      <edge source="jqlgzyq720b1ty" target="isbx4mtv8sn48l" id="45" weight="1" />
+      <edge source="isbx4mtv8sn48l" target="isbx4mtv8sn48l" id="46" weight="2" />
+      <edge source="jl43c52xwW1P" target="jl43c52xwW1P" id="47" weight="1" />
+      <edge source="j6n2i4dctxq74f" target="j6n2i4dctxq74f" id="48" weight="1" />
+    </edges>
+  </graph>
+</gexf>
