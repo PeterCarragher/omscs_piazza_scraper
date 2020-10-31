@@ -4,6 +4,8 @@
 ## Setup
 ```
 pip3 install networkx piazza-api
+cd <download_dir>
+python3 cs6460_scraper.py
 ```
 For more information on piazza-api, theres a [tutorial on the repo](https://github.com/hfaran/piazza-api).
 

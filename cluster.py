@@ -1,9 +1,3 @@
-# from transformers import BertTokenizer, TFBertForPreTrainingModel
-
-# tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
-# model = TFBertForPreTrainingOutput.from_pretrained('bert-base-cased')
-
-
 from sentence_transformers import SentenceTransformer, util
 import torch
 
