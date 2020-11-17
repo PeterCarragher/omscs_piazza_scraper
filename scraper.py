@@ -132,11 +132,10 @@ for class_code, class_name in classes.items():
 
     node_data = piazza_class.get_users(list(nodes))
     node_roles = {node['id']: node['role'] for node in node_data}
-    node_names = {node['id']: node['name'] for node in node_data}
 
     G = nx.DiGraph()  # Initialize a directed graph object
     G.add_nodes_from([(node, {'color': node_roles[node], 'size':node_sizes[node],
-                              'interactions':node_interactions[node], 'name':node_names[node]}) for node in nodes])  # Add nodes to the Graph
+                              'interactions':node_interactions[node]}) for node in nodes])  # Add nodes to the Graph
     G.add_weighted_edges_from(reduce(
         add, [[(a, b, edges[a][b]) for b in edges[a]] for a in edges]))  # Add edges to the Graph
     rootLogger.info(nx.info(G))  # Print information about the Graph
