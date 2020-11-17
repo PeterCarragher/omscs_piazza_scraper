@@ -4,13 +4,14 @@ import pprint
 from functools import reduce
 from operator import add
 import time
-import logging, sys
+import logging
+import sys
 
 logging.basicConfig(filename='session_log.txt',
-                            filemode='a',
-                            format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
-                            datefmt='%H:%M:%S',
-                            level=logging.DEBUG)
+                    filemode='a',
+                    format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
+                    datefmt='%H:%M:%S',
+                    level=logging.DEBUG)
 rootLogger = logging.getLogger()
 consoleHandler = logging.StreamHandler(sys.stdout)
 consoleHandler.setLevel(level=logging.INFO)
@@ -26,13 +27,14 @@ pp = pprint.PrettyPrinter(indent=4)
 while add_another_class:
     print('Classes added so far:')
     pp.pprint(classes)
-    class_code = input('Please enter the course code or enter to start parsing. To find the course code, visit the Piazza class and copy the last part of the URL (i.e for https://piazza.com/class/asdfghjkl, paste in \'asdfghjkl\'): ') 
+    class_code = input('Please enter the course code or enter to start parsing. To find the course code, visit the Piazza class and copy the last part of the URL (i.e for https://piazza.com/class/asdfghjkl, paste in \'asdfghjkl\'): ')
     if class_code == '':
         add_another_class = False
         continue
     class_name = input('Please enter the class name for this code: ')
     classes[class_code] = class_name
-    continue_input = input('Enter "begin" to start parsing the Piazza networks OR press enter to add another class: ')
+    continue_input = input(
+        'Enter "begin" to start parsing the Piazza networks OR press enter to add another class: ')
     if continue_input == 'begin':
         add_another_class = False
 
@@ -43,7 +45,7 @@ for class_code, class_name in classes.items():
     piazza_class = p.network(class_code)
     output_file = class_name + '_network.gexf'
 
-    feed = piazza_class.get_feed(limit = 10000)
+    feed = piazza_class.get_feed(limit=10000)
     cids = [post['id'] for post in feed["feed"]]
     edges = dict()
     nodes = set()
@@ -56,14 +58,14 @@ for class_code, class_name in classes.items():
     i = 0
 
     for post_id in cids:
-        if total_posts > 0 and total_posts%60 == 0:
+        if total_posts > 0 and total_posts % 60 == 0:
             rootLogger.info('Waiting for Piazza response...')
             time.sleep(15)
         try_fetch = True
         attempt = 0
         max_attempts = 20
         while try_fetch and attempt < max_attempts:
-            try: 
+            try:
                 time.sleep(attempt)
                 post = piazza_class.get_post(post_id)
                 try_fetch = False
@@ -101,8 +103,9 @@ for class_code, class_name in classes.items():
             follower = followup['uid']
             nodes.add(follower)
             node_sizes[follower] = node_sizes.get(follower, 1) + 1
-            node_interactions[follower] = node_interactions.get(follower, 1) + 1
-            
+            node_interactions[follower] = node_interactions.get(
+                follower, 1) + 1
+
             if not follower in edges:
                 edges[follower] = dict()
             edges[follower][author] = edges[follower].get(author, 0) + 1
@@ -119,27 +122,33 @@ for class_code, class_name in classes.items():
 
                 nodes.add(commentor)
                 node_sizes[commentor] = node_sizes.get(commentor, 1) + 2
-                node_interactions[commentor] = node_interactions.get(commentor, 1) + 1
+                node_interactions[commentor] = node_interactions.get(
+                    commentor, 1) + 1
 
                 if not commentor in edges:
                     edges[commentor] = dict()
-                edges[commentor][follower] = edges[commentor].get(follower, 0) + 1
-
+                edges[commentor][follower] = edges[commentor].get(
+                    follower, 0) + 1
 
     node_data = piazza_class.get_users(list(nodes))
     node_roles = {node['id']: node['role'] for node in node_data}
     node_names = {node['id']: node['name'] for node in node_data}
 
-    G = nx.DiGraph() # Initialize a directed graph object
-    G.add_nodes_from([(node, {'color':node_roles[node], 'size':node_sizes[node], 'interactions':node_interactions[node], 'name':node_names[node]}) for node in nodes]) # Add nodes to the Graph
-    G.add_weighted_edges_from(reduce(add, [[(a,b,edges[a][b]) for b in edges[a]] for a in edges])) # Add edges to the Graph
-    rootLogger.info(nx.info(G)) # Print information about the Graph
+    G = nx.DiGraph()  # Initialize a directed graph object
+    G.add_nodes_from([(node, {'color': node_roles[node], 'size':node_sizes[node],
+                              'interactions':node_interactions[node], 'name':node_names[node]}) for node in nodes])  # Add nodes to the Graph
+    G.add_weighted_edges_from(reduce(
+        add, [[(a, b, edges[a][b]) for b in edges[a]] for a in edges]))  # Add edges to the Graph
+    rootLogger.info(nx.info(G))  # Print information about the Graph
     nx.write_gexf(G, output_file)
 
     # plot centralities on another graph where colour is still role, but size is sum of these 3 centralities. Assumption is that 'leaders' are the TAs / instructors
-    # betweenness (how often they appear on route between other students) 
-    rootLogger.info('Betweenness centrality: ' + str(nx.centrality.betweenness_centrality(G)))
+    # betweenness (how often they appear on route between other students)
+    rootLogger.info('Betweenness centrality: ' +
+                    str(nx.centrality.betweenness_centrality(G)))
     # closeness (how many other students have a short path to that node)
-    rootLogger.info('Closeness centrality: ' + str(nx.centrality.closeness_centrality(G))) 
+    rootLogger.info('Closeness centrality: ' +
+                    str(nx.centrality.closeness_centrality(G)))
     #  degree (number of connections they have)
-    rootLogger.info('Degree centrality: ' + str(nx.centrality.degree_centrality(G))) 
+    rootLogger.info('Degree centrality: ' +
+                    str(nx.centrality.degree_centrality(G)))
