@@ -88,7 +88,7 @@ for class_code, class_name in classes.items():
             continue
 
         author = hash(post['change_log'][0]['uid'])
-        nodes.add(author)
+        nodes.add(post['change_log'][0]['uid'])
         node_sizes[author] = node_sizes.get(author, 1) + 10
         node_interactions[author] = node_interactions.get(author, 1) + 1
 
@@ -101,7 +101,7 @@ for class_code, class_name in classes.items():
                 # anonymous
                 continue
             follower = hash(followup['uid'])
-            nodes.add(follower)
+            nodes.add(followup['uid'])
             node_sizes[follower] = node_sizes.get(follower, 1) + 1
             node_interactions[follower] = node_interactions.get(
                 follower, 1) + 1
@@ -120,7 +120,7 @@ for class_code, class_name in classes.items():
                     continue
                 commentor = hash(comment['uid'])
 
-                nodes.add(commentor)
+                nodes.add(comment['uid'])
                 node_sizes[commentor] = node_sizes.get(commentor, 1) + 2
                 node_interactions[commentor] = node_interactions.get(
                     commentor, 1) + 1
@@ -131,11 +131,11 @@ for class_code, class_name in classes.items():
                     follower, 0) + 1
 
     node_data = piazza_class.get_users(list(nodes))
-    node_roles = {node['id']: node['role'] for node in node_data}
+    node_roles = {hash(node['id']): node['role'] for node in node_data}
 
     G = nx.DiGraph()  # Initialize a directed graph object
-    G.add_nodes_from([(node, {'color': node_roles[node], 'size':node_sizes[node],
-                              'interactions':node_interactions[node]}) for node in nodes])  # Add nodes to the Graph
+    G.add_nodes_from([(hash(node), {'color': node_roles[hash(node)], 'size':node_sizes[hash(node)],
+                              'interactions':node_interactions[hash(node)]}) for node in nodes])  # Add nodes to the Graph
     G.add_weighted_edges_from(reduce(
         add, [[(a, b, edges[a][b]) for b in edges[a]] for a in edges]))  # Add edges to the Graph
     rootLogger.info(nx.info(G))  # Print information about the Graph
