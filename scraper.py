@@ -87,7 +87,7 @@ for class_code, class_name in classes.items():
             rootLogger.debug('missing uid for %s', post_id)
             continue
 
-        author = post['change_log'][0]['uid']
+        author = hash(post['change_log'][0]['uid'])
         nodes.add(author)
         node_sizes[author] = node_sizes.get(author, 1) + 10
         node_interactions[author] = node_interactions.get(author, 1) + 1
@@ -100,7 +100,7 @@ for class_code, class_name in classes.items():
             if 'uid' not in followup:
                 # anonymous
                 continue
-            follower = followup['uid']
+            follower = hash(followup['uid'])
             nodes.add(follower)
             node_sizes[follower] = node_sizes.get(follower, 1) + 1
             node_interactions[follower] = node_interactions.get(
@@ -118,7 +118,7 @@ for class_code, class_name in classes.items():
                 if 'uid' not in comment:
                     # anonymous
                     continue
-                commentor = comment['uid']
+                commentor = hash(comment['uid'])
 
                 nodes.add(commentor)
                 node_sizes[commentor] = node_sizes.get(commentor, 1) + 2
