@@ -102,7 +102,7 @@ for class_code, class_name in classes.items():
                 continue
             follower = hash(followup['uid'])
             nodes.add(followup['uid'])
-            node_sizes[follower] = node_sizes.get(follower, 1) + 1
+            node_sizes[follower] = node_sizes.get(follower, 1) + 2
             node_interactions[follower] = node_interactions.get(
                 follower, 1) + 1
 
@@ -121,7 +121,7 @@ for class_code, class_name in classes.items():
                 commentor = hash(comment['uid'])
 
                 nodes.add(comment['uid'])
-                node_sizes[commentor] = node_sizes.get(commentor, 1) + 2
+                node_sizes[commentor] = node_sizes.get(commentor, 1) + 1
                 node_interactions[commentor] = node_interactions.get(
                     commentor, 1) + 1
 
