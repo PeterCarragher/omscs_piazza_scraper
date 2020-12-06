@@ -1,4 +1,4 @@
-# cs6460_scraper
+# OMSCS scraper
 
 
 ## Setup
