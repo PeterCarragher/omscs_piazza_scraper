@@ -10,7 +10,7 @@ import os
 
 plt.style.use('ggplot')
 
-mypath = 'piazza/'
+mypath = 'summer/'
 onlyfiles = [os.path.splitext(f)[0]
              for f in listdir(mypath) if isfile(join(mypath, f))]
 
@@ -29,6 +29,9 @@ class_sizes = {'CS6460-SP': 212,
                'CS7646-SU': 841,
                }
 
+def stat(arr):
+    return reduce(add, b.values()) / num_nodes
+    # for median: np.percentile(list(arr.values()), 50)
 
 def Centralities(G, normalise_file=None):
     num_nodes = G.number_of_nodes()
@@ -38,33 +41,31 @@ def Centralities(G, normalise_file=None):
     # betweenness (how often they appear on route between other students)
     # Betweenness centrality of a node v is the sum of the fraction of all-pairs shortest paths that pass through v
     b = nx.centrality.betweenness_centrality(G)
-    b = reduce(add, b.values()) / num_nodes
+    bm = stat(b)
 
     # closeness (how many other students have a short path to that node)
     # Closeness centrality of a node u is the reciprocal of the average shortest path distance to u over all n-1 reachable nodes.
     c = nx.centrality.closeness_centrality(G)
-    c = reduce(add, c.values()) / num_nodes
+    cm = stat(c)
 
     # degree (number of connections they have)
     # The degree centrality for a node v is the fraction of nodes it is connected to.
     d = nx.centrality.degree_centrality(G)
-    d = reduce(add, d.values()) / num_nodes
+    dm = stat(d)
 
-    # degree (number of connections they have)
-    # The degree centrality for a node v is the fraction of nodes it is connected to.
+    # in degree (number of incoming connections they have)
     i = nx.centrality.in_degree_centrality(G)
-    i = reduce(add, i.values()) / num_nodes
+    im = stat(i)
 
-    # degree (number of connections they have)
-    # The degree centrality for a node v is the fraction of nodes it is connected to.
+    # out degree (number of outoing connections they have)
     o = nx.centrality.out_degree_centrality(G)
-    o = reduce(add, o.values()) / num_nodes
+    om = stat(o)
 
     # avr. weighted degree
     w = dict(nx.degree(G, weight='weight'))
-    w = reduce(add, w.values()) / num_nodes
+    wm = stat(w)
 
-    return (b, c, d, i, o, w)
+    return ((bm, cm, dm, im, om, wm), (b, c, d, i, o, w))
 
 
 for file in onlyfiles:
@@ -86,18 +87,15 @@ for file in onlyfiles:
     # get normalised scores
     student_centralities_normalised[file] = Centralities(students, file)
 
-
-print(centralities)
-
-
 def PlotCentrality(idx, centralities, student_centralities, name):
     ind = np.arange(len(centralities.keys()))
-    width = 0.25
+    width = 0.35
     plt.bar(ind, [centralities[idx] for (_, centralities)
-                  in centralities.items()], width, label='All users')
-    plt.bar(ind + width, [centralities[idx] for (_, centralities) in student_centralities.items()], width,
+                  in centralities[0].items()], width, label='All users')
+    plt.bar(ind + width, [centralities[idx] for (_, centralities) in student_centralities[0].items()], width,
             label='Students only')
-    plt.bar(ind + width*2.0, [centralities[idx] for (_, centralities) in student_centralities_normalised.items()], width,
+    # comment this for median
+    plt.bar(ind + width*2.0, [centralities[idx] for (_, centralities) in student_centralities_normalised[0].items()], width,
             label='Students only (norm)')
 
     plt.ylabel(name)
@@ -108,6 +106,18 @@ def PlotCentrality(idx, centralities, student_centralities, name):
     plt.legend(loc='best')
     plt.savefig(name + '.png')
     plt.show()
+
+    plt.figure(figsize=(8,6))
+    for (file_name, value_dict) in student_centralities[1].items():
+        print(value_dict)
+        plt.hist([x for x in value_dict[idx].values() if x > 0.001], bins=100, alpha=0.5, label=file_name)
+    plt.xlabel(name, size=14)
+    plt.ylabel("# of students", size=14)
+    plt.title("Distribution of " + name)
+    plt.legend(loc='upper right')
+    plt.savefig(name+" distribution_filter.png")
+    plt.show()
+    
 
 
 PlotCentrality(0, centralities, student_centralities, 'Betweenness Centrality')
