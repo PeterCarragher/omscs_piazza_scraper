@@ -55,6 +55,7 @@ for class_code, class_name in classes.items():
 
     rootLogger.info('Parsing class %s with code %s', class_name, class_code)
     i = 0
+    node_roles = {}
 
     for (post_id, author) in threads.items():
         try_fetch = True
@@ -63,9 +64,11 @@ for class_code, class_name in classes.items():
         while try_fetch and attempt < max_attempts:
             try:
                 time.sleep(attempt)
-                comments = ed.readCommentsFromThread(post_id)
+                (comments, roles) = ed.readCommentsFromThread(post_id)
+                node_roles.update(roles)
                 try_fetch = False
-            except:
+            except Exception as e:
+                print(e)
                 attempt += 1
                 rootLogger.info('sleep for %d and retry %s', attempt, post_id)
                 continue
@@ -114,14 +117,9 @@ for class_code, class_name in classes.items():
                 edges[follower] = dict()
             edges[follower][recipient] = edges[follower].get(recipient, 0) + 1
 
-
-
-    # node_data = piazza_class.get_users(list(nodes))
-    # node_roles = {hash(node['id']): node['role'] for node in node_data}
-
     G = nx.DiGraph()  # Initialize a directed graph object
-    # G.add_nodes_from([(hash(node), {'color': node_roles[hash(node)], 'size':node_sizes[hash(node)],
-    #                           'interactions':node_interactions[hash(node)]}) for node in nodes])  # Add nodes to the Graph
+    G.add_nodes_from([(hash(node), {'color': node_roles[node], 'size':node_sizes[hash(node)],
+                              'interactions':node_interactions[hash(node)]}) for node in nodes])  # Add nodes to the Graph
     G.add_nodes_from([(hash(node), {'size':node_sizes[hash(node)],
                             'interactions':node_interactions[hash(node)]}) for node in nodes]) 
     G.add_weighted_edges_from(reduce(

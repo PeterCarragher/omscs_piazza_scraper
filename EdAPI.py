@@ -3,12 +3,10 @@ import queue
 import time
 import os
 
-# The following should be moved to config
-MEGATHREAD_ID = 598157 # 579285 # Thread in Ed playground class
-ED_CLASS_ID = 16797 # Ed playground class id (unused currently as thread_ids are unique across mutliple classes)
 ED_JW_USER_ID = 141771 # only for Jill Watson
 max_threads = 10000
 num_threads_per_request = 100 # maximum for ed
+# TODO: add threads to ignore (VERA & JW threads)?
 
 class EdAPI:
 
@@ -59,9 +57,14 @@ class EdAPI:
     def readCommentsFromThread(self, thread_id):
         token = self.getToken()
         r = self.makeRequest('GET', self.host + '/threads/' + str(thread_id) + '?view=1', headers={'x-token': token})
-        return r.json()['thread']['comments']
+        comments = r.json()['thread']['comments'] 
+        answers = r.json()['thread']['answers']
+        roles = {}
+        for user in r.json()['users']:
+            roles[user['id']] = user['course_role']
+        return (comments + answers, roles)
 
-    def readUnansweredCommentsFromThread(self, thread_id = MEGATHREAD_ID):
+    def readUnansweredCommentsFromThread(self, thread_id):
         thread = self.readCommentsFromThread(thread_id)
         unanswered = dict()
         unseen = queue.Queue()        
