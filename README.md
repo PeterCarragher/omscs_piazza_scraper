@@ -5,7 +5,7 @@
 ```
 pip3 install networkx piazza-api
 cd <download_dir>
-python3 cs6460_scraper.py
+python3 network_scraper.py
 ```
 
 Login with you Piazza credentials and specify the classes you would like to scrape.
