@@ -1,11 +1,14 @@
 # OMSCS scraper
-
+For edstem.org, the REST API is used directly through pythons requests lib.
+For Piazza, piazza-api is used.
 
 ## Setup
 ```
 pip3 install networkx piazza-api
 cd <download_dir>
-python3 network_scraper.py
+python3 piazza_network_scraper.py
+python3 EdTokenScript.py
+python3 
 ```
 
 Login with you Piazza credentials and specify the classes you would like to scrape.

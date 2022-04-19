@@ -12,7 +12,7 @@ num_threads_per_request = 100 # maximum for ed
 
 class EdAPI:
 
-    def __init__(self, email = "jill.watson@teaching.assistant.gatech.edu", password = "dilab+jill_watson", agent_user_id = ED_JW_USER_ID, token_file = 'token.txt', host = 'https://us.edstem.org/api'): 
+    def __init__(self, email, password, agent_user_id = ED_JW_USER_ID, token_file = 'token.txt', host = 'https://us.edstem.org/api'): 
         self.token_file = token_file
         self.token = self.getToken() # generated separately with EdTokenAPI script
         self.host = host
